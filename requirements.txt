@@ -1,7 +1,0 @@
-Django==4.2.11
-gunicorn==21.2.0
-pillow==10.4.0
-asgiref==3.8.1
-sqlparse==0.4.4
-tzdata==2024.1
-packaging==24.1

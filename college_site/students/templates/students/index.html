@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список студентов</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📚 Список студентов</h1>
+
+    <a class="btn-add" href="/students/add/">+ Добавить студента</a>
+    <a href="{% url 'logout' %}">Выйти</a>
+
+    <div class="student-list">
+
+        {% for student in students %}
+        <div class="card">
+
+            {% if student.photo %}
+                <img src="{{ student.photo.url }}" class="avatar">
+            {% else %}
+                <div class="no-photo">Нет фото</div>
+            {% endif %}
+
+            <div class="info">
+                <h2>{{ student.first_name }} {{ student.last_name }}</h2>
+                <p>Возраст: {{ student.age }}</p>
+
+                <p>Группа: {{ student.group.name }}</p>
+                <p>Куратор: {{ student.group.curator }}</p>
+
+                <p>Клубы:</p>
+                <ul>
+                    {% for club in student.clubs.all %}
+                        <li>{{ club.name }}</li>
+                    {% empty %}
+                        <li>Нет клубов</li>
+                    {% endfor %}
+                </ul>
+
+                <div class="actions">
+                    <a href="{% url 'detail' student.id %}">Подробнее</a>
+                    <a href="{% url 'edit_student' student.id %}">Редактировать</a>
+                    <a class="delete" href="{% url 'delete_student' student.id %}">Удалить</a>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

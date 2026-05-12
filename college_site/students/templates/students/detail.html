@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Студент</title>
+</head>
+<body>
+
+<h1>{{ student.first_name }} {{ student.last_name }}</h1>
+
+<p>Возраст: {{ student.age }}</p>
+<p>Группа: {{ student.group }}</p>
+
+{% if student.photo %}
+    <img src="{{ student.photo.url }}" width="150">
+{% else %}
+    <p>Фото нет</p>
+{% endif %}
+
+<br><br>
+<a href="/students/">Назад</a>
+<h1>{{ student.first_name }} {{ student.last_name }}</h1>
+<p>Возраст: {{ student.age }}</p>
+<p>Группа: {{ student.group }}</p>
+<a href="/students/">Назад</a>
+
+</body>
+</html>

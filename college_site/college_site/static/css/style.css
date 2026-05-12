@@ -1,0 +1,94 @@
+/* фон страницы */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* контейнер */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* заголовок */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* кнопка добавить */
+.btn-add {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.btn-add:hover {
+    background: #45a049;
+}
+
+/* список */
+.student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* карточка */
+.card {
+    display: flex;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+/* фото */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #ddd;
+}
+/* если нет фото */
+.no-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+/* текст */
+.info h2 {
+    margin: 0;
+    color: #222;
+}
+
+/* кнопки */
+.actions a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+.actions .delete {
+    color: red;
+}

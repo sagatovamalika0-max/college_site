@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить студента</title>
+</head>
+<body>
+
+<h1>Добавить студента</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    Имя: <input type="text" name="first_name"><br><br>
+    Фамилия: <input type="text" name="last_name"><br><br>
+    Возраст: <input type="number" name="age"><br><br>
+    Группа: <input type="text" name="group"><br><br>
+    Фото: <input type="file" name="photo"><br><br>
+
+    <button type="submit">Сохранить</button>
+</form>
+
+<br>
+<a href="/students/">Назад</a>
+
+</body>
+</html>
+<h1>Добавить студента</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    Имя:
+    <input type="text" name="first_name"><br><br>
+
+    Фамилия:
+    <input type="text" name="last_name"><br><br>
+
+    Возраст:
+    <input type="number" name="age"><br><br>
+
+    <!-- 🔥 ВАЖНО: теперь это список -->
+   Группа:
+<select name="group">
+    {% for group in groups %}
+        <option value="{{ group.id }}">{{ group.name }}</option>
+    {% endfor %}
+</select>
+
+    Фото:
+    <input type="file" name="photo"><br><br>
+
+    <button type="submit">Сохранить</button>
+</form>
